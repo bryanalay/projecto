@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Jair Monserrate" content="">
+    <title>Formulario Tarjeta</title>
+    <link rel="stylesheet" href="CSS/Estilos.css">
+<style>
+  
+    /*Maquetacion en columna (display:grid)*/
+    .containerMaqGrid {
+        padding: 30px;
+        display: grid;
+        /*grid-template-rows: repeat(2, 1fr);*/
+        grid-gap: 5px;
+        
+        justify-content: center;
+        max-width: max-content;
+        margin: auto;
+
+        margin-top: 10px; 
+        margin-bottom: 10px; 
+        vertical-align: middle;
+        background-color: #e7e7e7;
+        border-top: 40px solid #e9a615;
+        border-bottom: 40px solid #e9a615;
+    }
+
+    .bloque {        
+        padding-bottom: 4px;
+        text-align: center;
+    }
+    
+    .formCheck.formCheckInline {
+        display: inline-flex;
+        align-items: center;
+        vertical-align: middle;
+    }
+    .formCheck.formCheckInline .formCheckLabel {
+        margin-left: 2px ;
+        margin-right: 14px;
+        margin-block: 14px;
+    }
+    .btnPrimaryForm {
+        border-radius: 15% ;
+        border: 1px solid rgb(131, 129, 129);
+        background-color: rgb(248, 182, 39);
+        padding: 10px;
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 8px;
+        color: black;   
+    }
+    .btnPrimaryForm:hover {
+        color: white;
+    } 
+
+    .btn{
+        width: 250px;  
+    }
+    .btnPrimary{
+        border-radius: 5px;
+        padding: 4px;
+        margin-top: 8px;
+        text-align: center;
+        opacity: 0.97;
+        }
+    .buttonContainer {
+    justify-content: center; 
+    }
+
+    .formGroup2 {
+        max-width: 500px;
+        background-color: #f7cc57;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 8px;
+    }
+    .backGround{
+        background-color: #f2f2f2;
+        opacity: 0.98;
+    }
+
+    .menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+
+    .menu > li {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0.99;
+    }
+
+</style>
+</head>
+<body>
+<header>
+    <div id="banner">
+        <img class="Logo" src="Imagenes/Logo.jpg" alt="Logo del restaurante">
+        <h1 class="titulo">Restaurante y servicio a Domicilio</h1>
+    </div>
+    </header>
+    <nav>
+        <ul class="menu">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Menu.html">Menú</a></li>
+        <li><a href="Categoria.html">Categorias</a></li>
+        <li><a href="Pedido.html">Pedido</a></li>
+        <li><a href="Reseña.html">Reseña</a></li>
+  
+        </ul>
+    </nav>
+    
+    
+    <form id="formTarjeta">
+    
+    <div class="containerMaqGrid">
+    <div class="bloque">
+        <h2 style="text-align: center;">Formulario de Tarjeta:</h2>
+        <div class="formGroup2">
+        <label for="tarjeta">Tarjeta de Crédito:</label>
+        <input
+            type="text"
+            id="tarjeta"
+            name="tarjeta"
+            pattern="[0-9]{16}"
+            placeholder="Ingrese el número de tarjeta (16 dígitos)"
+        >
+    </div>
+</div>
+
+    <div class="bloque">
+        <div class="formGroup2">
+        <label>Tipo de Tarjeta:</label>
+        <select name="tipoTarjeta" id="tipoTarjeta" class="formSelect">
+            <option value="0">Abrir el menu</option>
+            <option value="1">Credito</option>
+            <option value="2">Debito</option>
+            <option value="3">Ahorro</option>
+        </select>
+    </div>
+    </div>
+    
+    <div class="bloque">
+        <div class="formGroup2">
+        <label>Fecha de Vencimiento:</label>
+        <input type="month" id="vencimiento" name="vencimiento">
+    </div>
+    </div>
+
+    <div class="bloque">
+        <div class="formGroup2">
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" placeholder="Ingrese el CVV (3 dígitos)">
+    </div>
+</div>
+    
+    <div class="bloque">
+        <div class="formGroup2">
+        <label>Seleccione el nombre de la tarjeta:</label>
+        <div class="formCheck formCheckInline">
+            <input class="formCheckInput sus" type="checkbox" name="Ntarjetas" id="Ntarjetas" value="Xperta"> 
+            <label class="formCheckLabel">Xperta</label>
+        </div>
+        <div class="formCheck formCheckInline">
+            <input class="formCheckInput sus" type="checkbox" name="Ntarjeta1s" id="Ntarjetas1"  value="Visa" >
+            <label class="formCheckLabel">Visa</label>
+        </div>
+        <div class="formCheck formCheckInline">
+            <input class="formCheckInput sus" type="checkbox" name="Ntarjetas2" id="Ntarjetas2"  value="Paypal">
+            <label class="formCheckLabel">Paypal</label>
+        </div>
+        <div class="formCheck formCheckInline">
+            <input class="formCheckInput sus" type="checkbox" name="Ntarjetas3" id="Ntarjetas3"  value="Pacificar">
+            <label class="formCheckLabel">Pacificard</label>
+        </div>
+        <div class="formCheck formCheckInline">
+            <input class="formCheckInput sus" type="checkbox" name="Ntarjetas4" id="Ntarjetas4" value="Discover">
+            <label class="formCheckLabel">Discover</label>
+        </div>
+    </div>
+    
+</div>
+
+        <div class="bloque">
+        <div class="formGroup2">
+        <label>Email address:</label>
+        <input type="email" id="correo" placeholder="name@example.com" name="correo">
+         </div>
+        </div>
+        <div class="buttonContainer">
+        <input id="guardar" class="btn" type="submit" value="Guardar">
+        <div class="btnPrimary">
+            <a class="btnPrimaryForm" role="button" href="Pedido.html">1</a>
+            <a class="btnPrimaryForm" aria-disabled="true">2</a>
+        </div>
+        </div>
+    </div>
+    </form>
+
+    <footer>
+    <h3>Dirección de contacto</h3>
+    <h3>Derechos reservados 2023 - Poryecto 1er Parcial - Grupo #11</h3>
+    </footer>
+    <!--PARA ENLAZAR EL DOCUMENTO JS EXTERNO-->
+    <script src="js/validacionF_Tarjeta.js"></script>
+</body>
+</html>

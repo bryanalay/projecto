@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Mamuel Alejandro Guayasamin Aviles">
+    <title>Formulario Login</title>
+    <link rel="stylesheet" href="CSS/Estilos.css">
+
+    <style>
+
+      .form-login h5 {
+        text-align: center;
+        height: 10%;
+        margin-bottom: 30px;
+        font-size: 20px;
+      }
+      .controls {
+        width: 100%;
+        border: 1px solid #e09c35;
+        margin-bottom: 15px;
+        padding: 11px 10px;
+        background: #252323;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .buttons {
+        width: 100%;
+        height: 40px;
+        background: #d17913bd;
+        border: none;
+        color: white;
+        margin-bottom: 16px;
+      }
+      .form-login a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .form-login a:hover {
+        text-decoration: underline;
+      }
+      /*Maquetación Flotamiento (float: left, float: right)*/
+      .form-login {
+        float: none;
+        width: 400px;
+        height: auto;
+        background: #532b0a;
+        margin: auto;
+        margin-top: 120px;
+        padding: 70px 30px;
+        color: white;
+      }
+      .boton{
+        float: none;
+      }
+      .form-login p{
+        float: right;
+        height: 40px;
+        text-align: center;
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="form-login">
+      <form id="form">
+        <h5>Formulario Login</h5>
+        <div>
+          <input type="text" name="usuario" id="usuario" class="controls" placeholder="Ingrese su Usuario">
+        </div>
+        <div>
+          <input type="password" name="contraseña" id="contraseña" class="controls" placeholder="Ingrese su Contraseña">
+        </div>
+        <input type="submit" value="Ingresar" class="buttons">
+        <div>
+        <p>¿No tienes una cuenta?<a href="Registro_Formulario.html"> Registrarse</a></p>
+        <p><a href="#">¿Olvidastes tu Contraseña?</a></p>
+      </div>
+      </form>
+    </div>
+
+    <script type="text/javascript">
+      var form = document.querySelector("#form"); // selecciona el primero que cumple con el selector
+      form.addEventListener('submit', validarFormulario);
+
+      function validarFormulario(event) {
+          event.preventDefault(); // Evita que el formulario se envíe y recargue la página
+
+          //Validacion de la caja de texto
+          var valido = true;
+          var letra = /^[a-z ,.'-]+$/i;
+          var txtUsuario = document.getElementById("usuario");
+          var txtContraseña = document.getElementById("contraseña");
+
+          limpiarMensajes();
+
+          //Validacion Usuario
+          if (txtUsuario.value === '') {
+              valido = false;
+              mensaje("El campo de usuario es requerido",txtUsuario);
+          } else if (txtUsuario.value.length > 30) {
+              valido = false;
+              mensaje("Ingrese un máximo de 30 caracteres para el campo de usuario",txtUsuario);
+          }
+          //Validacion Contraseña
+          if (txtContraseña.value === '') {
+              valido = false;
+              mensaje("El campo de contraseña es requerido",txtContraseña);
+          } else if (txtContraseña.value.length < 8 || txtContraseña.value.length > 20) {
+              valido = false;
+              mensaje("La contraseña debe tener entre 8 y 20 caracteres",txtContraseña);
+          }
+          if (valido) {
+    window.location.href = "home.html";
+  }
+      }
+
+      function mensaje(cadenaMensaje, elemento) {
+    elemento.focus();
+    var nodoPadre = elemento.parentNode;
+    var nodoMensaje = document.createElement("span");
+    nodoMensaje.textContent = cadenaMensaje;
+    nodoMensaje.setAttribute("class", "mensajeError");
+    nodoPadre.appendChild(nodoMensaje);
+}
+
+function limpiarMensajes() {
+    var mensajes = document.querySelectorAll(".mensajeError");
+    for (let i = 0; i < mensajes.length; i++) {
+        mensajes[i].remove();// remueve o elimina un elemento de mi doc html
+    }
+  }
+    </script>
+
+  </body>
+</html>

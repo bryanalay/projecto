@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="autor: " content="">
+    <title>Categorias Fomrulario </title>
+    <link rel="stylesheet" href="CSS/Estilos.css">
+  <style>
+
+    /*Maquetacion inline-block (display:inline-block)*/
+    .containerCatg {
+      display: flex;  
+      justify-content: center;
+      max-width: max-content;
+      margin: auto;
+      vertical-align: middle;
+      background-color: #e2e2e2;
+      border-top: 40px solid #e9a615;
+      border-bottom: 40px solid #e9a615;
+
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .column {
+      flex-direction: column ;
+      align-items: center;
+      justify-content: center;
+      
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .block {
+      background-color: #f7cc57;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      align-items: center;
+
+      margin-bottom: 10px;
+      margin-top: 15px;
+      margin-right: 20px;
+      margin-left: 20px;
+      
+    }
+
+    .formCheck {
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle;
+    }
+    .formCheckInline .formCheckLabel {
+      margin-left: 8px;
+      margin-right: 8px;
+      margin-block: 1px;
+    }
+    .buttonContainer {
+      text-align: center;
+      justify-content: center; 
+      width: 200px;
+      margin-left: 80px;
+    }
+
+  </style>
+</head>
+<body>
+    <header>
+        <div id="banner">
+            <img class="Logo" src="Imagenes/Logo.jpg" alt="Logo del restaurante">
+            <h1 class="titulo">Restaurante y servicio a Domicilio</h1>
+        </div>
+        </header>
+      <nav>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Menu.html">Menú</a></li>
+            <li><a href="Categoria.html">Categorias</a></li>
+            <li><a href="Pedido.html">Pedidos</a></li>
+            <li><a href="Reseña.html">Reseñas</a></li>
+        </ul>
+      </nav>
+      
+      <form id="formCategoria">
+        <h2 style="background-color: antiquewhite ;text-align: center;">Formulario Categorías</h2>
+      <div class="containerCatg">
+        
+        <div class="column">
+          <h3 style="text-align: center;">Nombre de la categoria</h3>
+          <div class="block" ><b>Tipo de comida:</b><br><br>
+            <div class="formCheck formCheckInline">
+              <input class="formCheckInput" type="radio" name="tipoComida" id="principales" value="P">
+              <label class="formCheckLabel" >principales</label>
+            </div>
+            <div class="formCheck formCheckInline">
+              <input class="formCheckInput" type="radio" name="tipoComida" id="entrantes" value="E">
+              <label class="formCheckLabel">entrantes</label>
+            </div>
+            <div class="formCheck formCheckInline">
+              <input class="formCheckInput" type="radio" name="tipoComida" id="postres" value="PO">
+              <label class="formCheckLabel">postres</label>
+            </div>
+            <div class="formCheck formCheckInline">
+              <input class="formCheckInput" type="radio" name="tipoComida" id="bebidas" value="B">
+              <label class="formCheckLabel">bebidas</label>
+            </div>
+        </div>
+        <div class="block"><b>Nombre del plato:</b><br>
+        <input type="text" id="plato" name="plato" required>
+        </div>
+        </div>
+
+        <div class="column">
+          <h3 style="text-align: center;">Popularidad</h3>
+          
+          <div class="block"><b>Precio Promedio:</b><br><br>
+            <div class="formCheck formCheckInline">
+              <input class="formCheckInput sus" name="PPromedio" id="PPromedio" type="checkbox" value="Economico" >
+              <label class="formCheckLabel">
+                Económico
+              </label>
+              <input class="formCheckInput sus" name="PPromedio1" id="PPromedio1" type="checkbox" value="Moderado" >
+              <label class="formCheckLabel" >
+                Moderado
+              </label>
+              <input class="formCheckInput sus" name="PPromedio2" id="PPromedio2"  type="checkbox" value="Alto" >
+              <label class="formCheckLabel">
+                Alto
+              </label>
+            </div>
+          </div>
+          <div class="block"><b>Ocasiones o momentos ideales:</b><br>
+            <input
+              id="ocasiones"
+              class="formControl"
+              list="listaOpciones" required>
+        <datalist id="listaOpciones">
+          <option value="Desayuno"></option>
+          <option value="Almuerzo"></option>
+          <option value="Merienda"></option>
+        </datalist>
+        </div>
+        <div class="buttonContainer"><br>
+          <input id="guardar" class="btn" type="submit" value="Guardar">
+          </div><br>
+        </div>
+        <div class="column">
+          <h3 style="text-align: center;">Sugerencias adicionales</h3>
+          
+          <div class="block"><b>Nuevas categorias:</b>
+            <textarea
+            id="nuevacategoria"
+            name="nuevacategoria"
+            rows="2"
+            cols="20"
+            placeholder="Comentarios..."></textarea>
+          </div>
+          <div class="block"><b>Restricciones dieteticas:</b>
+            <select name= "tipoRestriccion" id="tipoRestriccion" class="formSelect">
+              <option value="0">Abrir el menu</option>
+              <option value="1">vegetariana</option>
+              <option value="2">sin gluten</option>
+              <option value="3">sin lactosa</option>
+          </select>
+          </div>
+        </div>
+      </div>
+      
+    </form>
+    <footer>
+        <h3>Dirección de contacto</h3>
+        <h3>Derechos reservados 2023 - Poryecto 1er Parcial - Grupo #11</h3>
+    </footer>
+    <!--PARA ENLAZAR EL DOCUMENTO JS EXTERNO-->
+    <script src="js/validacionF_Categoria.js">
+    </script>
+</body>
+</html>

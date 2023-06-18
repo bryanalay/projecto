@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Jair Monserrate: " content="JM">
+    <title>Pedido</title>
+    <link rel="stylesheet" href="CSS/Estilos.css">
+<style>
+    
+      .posicionBlock{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      }
+  
+    .containerMaqFlex {
+      display:inline-block;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      
+      width: 520px;
+      margin: auto;
+      vertical-align: middle;
+      
+      background-color: #e2e2e2;
+      border-top: 40px solid #e9a615;
+      border-bottom: 40px solid #e9a615;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  
+    .block {
+      background-color: #f7cc57;
+      margin-bottom: 10px;
+      padding: 15px;
+      text-align: center;
+      margin: 10px;
+      border-radius: 5px;
+      }
+    
+    .btnPrimaryForm {
+      border: 1px solid rgb(131, 129, 129);
+      border-radius: 15% ;
+      background-color: rgb(248, 182, 39);
+      padding: 10px;
+      
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      margin-right: 5px;
+      margin-bottom: 8px;   
+    }
+    .btnPrimaryForm:hover {
+      color: white;
+    } 
+
+    .btn{
+      width: 200px;  
+    }
+    .btnPrimary{
+      border-radius: 5px;
+      padding: 4px;
+      margin-top: 8px;
+      text-align: center;
+      opacity: 0.97;
+    }
+    .buttonContainer {
+    justify-content: center;
+    }
+
+    .menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+
+    .menu > li {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0.99;
+    }
+  </style>
+</head>
+  <body>
+    <header>
+      <div id="banner">
+        <img class="Logo" src="Imagenes/Logo.jpg" alt="Logo del restaurante">
+        <h1 class="titulo">Restaurante y servicio a Domicilio</h1>
+      </div>
+    </header>
+  
+      <nav>
+      <ul class="menu">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Menu.html">Menú</a></li>
+        <li><a href="Categoria.html">Categorias</a></li>
+        <li><a href="Pedido.html">Pedido</a></li>
+        <li><a href="Reseña.html">Reseña</a></li>
+        
+      </ul>
+    </nav>
+
+    <form id="formPedidos">
+      <div class="posicionBlock">
+      <div class="containerMaqFlex">
+
+        <h2 style="text-align: center;">Datos de Direccion:</h2>
+        <div class="block bloque1">
+          <label>Nombres completo:</label>
+        <input type="text" id="nombres" name="nombre" required>
+        </div>
+        <div class="block bloque2">
+          <label>Zona:</label>
+        <input
+          id="zona"
+          class="formControl"
+          list="listaOpciones"
+          placeholder="Escriba su zona..."
+        >
+        <datalist id="listaOpciones">
+          <option value="Norte"></option>
+          <option value="Centro"></option>
+          <option value="Sur"></option>
+          <option value="Oeste"></option>
+          <option value="Este"></option>
+          <option value="Suburbio"></option>
+        </datalist>
+        </div>
+        
+        <div class="block bloque3">
+          <label>Direccion de calle:</label>
+        <input type="text" id="direccion" name="direccion" required>
+        </div>
+        
+        <div class="block bloque4">
+          <label>Referencias:</label>
+        <textarea
+          id="referencia"
+          name="referencia"
+          rows="2"
+          cols="20"
+          placeholder="Diagonal A frente a B..." required></textarea>
+        </div>
+        
+        <div class="block bloque5">
+          <label>Hora de entrega:</label>
+          <input type="time" id="hora" name="hora" required>
+        </div>
+        
+        <div class="block bloque6">
+          <label>Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="090-000-0000" required>
+        </div>
+        
+        <div class="buttonContainer bloque7 ">
+          <input type="submit" class="btn btn-primary" value="Enviar">
+          <div class="btnPrimary">
+              <a class="btnPrimaryForm" aria-disabled="true">1</a>
+              <a class="btnPrimaryForm"  role="button" href="Formulario_Tarjeta.html">2</a>
+          </div>
+          </div>
+      </div>
+      </div>     
+    </form>
+    <footer>
+      <h3>Dirección de contacto</h3>
+      <h3>Derechos reservados 2023 - Poryecto 1er Parcial - Grupo #11</h3>
+    </footer>
+  <!--PARA ENLAZAR EL DOCUMENTO JS EXTERNO-->
+  <script src="js/validacionPedido.js"></script>
+</body>
+</html>

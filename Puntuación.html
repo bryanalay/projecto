@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="author" content="">
+      <title>Foodie place</title>
+      <link rel="stylesheet" href="CSS/Estilos.css">
+    <style>
+      .form-container {
+        flex-basis: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #da9412;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group input[type="radio"] {
+        display: none;
+      }
+      .form-group label.rating-label:hover,
+      .form-group label.rating-label:hover ~ label.rating-label {
+        background-color: #ffcc00;
+      }
+      .form-group input[type="radio"]:checked ~ label.rating-label {
+        background-color: #ffcc00;
+      }
+      .form-actions {
+        text-align: center;
+      }
+      .form-actions button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+  /*Maquetación Inline-block Layout (display: inline, display: block, display:inline-block)*/
+  .form-group label.rating-label {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: #ccc;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+  /*Maquetación Flexbox: (display:flex)*/
+  .container {
+        display: flex;
+        margin: 100px;
+      }
+  /*Maquetación Grid Layout: (display: grid)*/
+  .Voto{
+        display: grid;
+        background-color: #ccc;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <section id="banner">
+          <img class="Logo" src="Imagenes/Logo.jpg" alt="Logo del restaurante">
+          <h2 class="titulo">Restaurante y Comida a Domicilio</h2>
+      </section>
+      </header>
+
+    <nav>
+      <ul>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="Menu.html">Menú</a></li>
+          <li><a href="Categoria.html">Categorias</a></li>
+          <li><a href="Pedido.html">Pedidos</a></li>
+          <li><a href="Reseña.html">Reseñas</a></li>
+      </ul>
+    </nav>
+
+    <div class="Voto">
+      <h1>Califica el Platillo</h1>
+    </div>
+    
+    <header>
+      <div class="container">
+        <div class="form-container">
+          <form>
+            <div class="form-group">
+              <h4>Nombre de los  platos:</h4>
+              <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+              <h4>Votos:</h4>
+              <div class="rating">
+                <input type="radio" id="rating1" name="calificacion" value="1">
+                <label class="rating-label" for="rating1">1</label>
+
+                <input type="radio" id="rating2" name="calificacion" value="2">
+                <label class="rating-label" for="rating2">2</label>
+
+                <input type="radio" id="rating3" name="calificacion" value="3">
+                <label class="rating-label" for="rating3">3</label>
+
+                <input type="radio" id="rating4" name="calificacion" value="4">
+                <label class="rating-label" for="rating4">4</label>
+
+                <input type="radio" id="rating5" name="calificacion" value="5">
+                <label class="rating-label" for="rating5">5</label>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit">Enviar Voto</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <footer>
+      <h3>Dirección de contacto</h3>
+      <h3>Derechos reservados 2023 - Tarea 1 - Grupo #11</h3>
+   </footer>
+
+  </body>
+</html>

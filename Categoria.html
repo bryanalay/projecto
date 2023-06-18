@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="autor: " content="">
+    <title>Categorias </title>
+       <link rel="stylesheet" href="CSS/Estilos.css">
+     <style>
+        
+        /*Maquetacion en fila (display:grid)*/
+        .containerMaqGrid {
+            display:inline-flex;
+            /*grid-template-columns: repeat(5, 1fr);*/
+            grid-gap: 10px;
+        
+            padding: 40px;
+            background-color: #f2f2f2;
+            
+        }
+        .bloque {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            border-style: dotted;
+        }
+        .bloque:hover{
+            background-color: #fffdfd;
+        }
+        .categoria {
+        text-align: center;
+        justify-content: center;
+        }
+        .categoria img {
+            width: 200px; 
+            height: auto; 
+            border-radius: 4%;
+            }
+        
+        .categoria img:hover {
+            cursor:crosshair; 
+            width: 265px; 
+            opacity: 1;
+            filter: contrast(120%);
+            }
+        
+        .txt{
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+  </style>
+</head>
+<body>
+    <header>
+        <div id="banner">
+            <img class="Logo" src="Imagenes/Logo.jpg" alt="Logo del restaurante">
+            <h1 class="titulo">Restaurante y Comida a Domicilio</h1>
+        </div>
+        </header>
+    <nav>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Menu.html">Menú</a></li>
+            <li><a href="Categoria.html">Categorias</a></li>
+            <li><a href="Pedido.html">Pedidos</a></li>
+            <li><a href="Reseña.html">Reseñas</a></li>
+        </ul>
+    </nav>
+        <h2 style="background-color: antiquewhite ;text-align: center;">Categorías</h2>
+    <div class="containerMaqGrid">
+        <div class="bloque">
+        <div class="categoria">
+            <h3  style="color: coral;">Platos principales</h3>
+            <img src="Imagenes/plato_principal.jpg" style="text-align:center;" alt="Categoría 1">
+            
+            <div class="txt">
+            <p style="text-align: justify;"> Descubre nuestra selección de deliciosos platos principales, 
+                preparados con ingredientes frescos y sabores únicos.<br>Desde exquisitas carnes a suculentos 
+                platos vegetarianos, tenemos opciones para satisfacer todos los gustos.</p>
+            <a class="click" href="Menu.html">Ver menú</a>
+        </div>
+    </div>
+
+        </div>
+        <div class="bloque">
+            <div class="categoria">
+                <h3 style="color: coral;">Entradas y aperitivos</h3>
+                <img src="Imagenes/entrada_aperit.jpg" alt="Categoría 2">
+                
+                <div class="txt">
+                <p style="text-align: justify;">Comienza tu comida con nuestras irresistibles entradas y aperitivos.<br> 
+                    Desde crujientes nachos con queso fundido hasta delicadas bruschettas, te ofrecemos una variedad 
+                    de opciones deliciosas para abrir el apetito.</p>
+                    <a class="click" href="Menu.html">Ver menú</a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="bloque">
+            <div class="categoria">
+                <h3 style="color: coral;">Postres y dulces</h3>
+                <img src="Imagenes/postres.jpg" alt="Categoría 3">
+                
+                <div class="txt">
+                <p style="text-align: justify;">No te puedes perder nuestros irresistibles postres y dulces.<br> 
+                    Desde clásicos como el pastel de chocolate hasta creaciones especiales como helados caseros,
+                    te ofrecemos el toque dulce perfecto para culminar tu comida.</p>
+                    <a class="click" href="Menu.html">Ver menú</a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="bloque">
+            <div class="categoria">
+                <h3 style="color: coral;">Bebidas</h3>
+                <img src="Imagenes/bebidas.jpg" alt="Categoría 4">
+                
+                <div class="txt">
+                <p style="text-align: justify;">En nuestro restaurante, ofrecemos una amplia variedad de bebidas refrescantes
+                    y sabrosas. <br>Nuestro menú de bebidas incluye opciones para 
+                    todos los gustos, desde refrescos clásicos hasta cócteles artesanales y bebidas saludables.</p>
+                    <a class="click" href="Menu.html">Ver menú</a>    
+                </div>
+                
+            </div>
+        </div>
+        <div class="bloque">
+            <div class="categoria">
+                <h3 style="color: coral;">Recomendaciones y opiniones</h3>
+                <img src="Imagenes/categoria.jpg"   alt="Categoría 5">
+                <div class="txt">
+                <p style="text-align: justify;">¡Tu opinión es importante para nosotros! En nuestro restaurante, valoramos tus
+                    ideas y sugerencias.<br>Si tienes alguna idea para una nueva 
+                    categoría de platos o alimentos, nos encantaría escucharte..</p>
+                    <a class="click" href="Formulario_Categoria.html">Crear recomendacion</a>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h3>Dirección de contacto</h3>
+        <h3>Derechos reservados 2023 - Poryecto 1er Parcial - Grupo #11</h3>
+    </footer>
+
+    <script>
+    var categorias = document.getElementsByClassName('categoria');
+    // Recorrer cada elemento de categoría y agregar evento de clic
+    for (var i = 0; i < categorias.length; i++) {
+    categorias[i].addEventListener('click', function() {
+        // Obtener el título de la categoría
+        var titulo = this.querySelector('h3').textContent;
+
+        // Mostrar un mensaje con el título de la categoría seleccionada
+        alert('Has seleccionado la categoría: ' + titulo);
+    });
+    }
+    </script>
+</body>
+</html>

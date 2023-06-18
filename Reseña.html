@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Bryan Alay" />
+    <title>Reseñas</title>
+    <link rel="stylesheet" href="CSS/Estilos.css" />
+    <script>
+      function cargarReseñas() {
+        getReseñas();
+        //alert("mas reseñas");
+      }
+
+      //EJEMPLO DE RESEÑA
+      // <div class="reseña">
+      //   <div class="img-circle">
+      //     <img src="Imagenes/foto5.jpg" alt="Foto de perfil del usuario" />
+      //   </div>
+      //   <h3>Shirley</h3>
+      //   <p>
+      //     "Mi experiencia en este restaurante fue simplemente maravillosa. El
+      //     chef es un genio culinario y cada bocado era una explosión de sabores.
+      //     Sin duda, este lugar se ha convertido en mi favorito. ¡No puedo
+      //     esperar para regresar!"
+      //   </p>
+      // </div>
+
+      function getReseñas() {
+        var reseñas = document.querySelector(".reseñas");
+
+        var reseñasArr = [
+          {
+            imagen: "Imagenes/foto2.jpg",
+            nombre: "David",
+            comentario: `"Me encanta pedir comida a domicilio en este restaurante. Siempre
+            son puntuales y la calidad de la comida es excepcional. Sin duda, mi
+            opción favorita."`,
+          },
+          {
+            imagen: "Imagenes/foto2.jpg",
+            nombre: "David",
+            comentario: `"Me encanta pedir comida a domicilio en este restaurante. Siempre
+            son puntuales y la calidad de la comida es excepcional. Sin duda, mi
+            opción favorita."`,
+          },
+          {
+            imagen: "Imagenes/foto2.jpg",
+            nombre: "David",
+            comentario: `"Me encanta pedir comida a domicilio en este restaurante. Siempre
+            son puntuales y la calidad de la comida es excepcional. Sin duda, mi
+            opción favorita."`,
+          },
+          {
+            imagen: "Imagenes/foto2.jpg",
+            nombre: "David",
+            comentario: `"Me encanta pedir comida a domicilio en este restaurante. Siempre
+            son puntuales y la calidad de la comida es excepcional. Sin duda, mi
+            opción favorita."`,
+          },
+        ];
+
+        reseñasArr.forEach((resenia) => {
+          var nuevaReseña = document.createElement("div");
+          nuevaReseña.className = "reseña";
+          nuevaReseña.innerHTML = `        
+          <div class="img-circle">
+            <img src=${resenia.imagen} alt="Foto de perfil del usuario" />
+          </div>
+          <h3>${resenia.nombre}</h3>
+          <p>
+            ${resenia.comentario}
+          </p>
+        `;
+          reseñas.appendChild(nuevaReseña)
+        });
+        console.log(reseñas);
+      }
+    </script>
+    <style>
+      .reseña h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .reseña p {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      button {
+        color: white;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: rgb(0, 0, 0);
+      }
+      .input-reseña {
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: white;
+      }
+      /*Maquetación Grid Layout: (display: grid)*/
+      .container {
+        display: grid;
+        position: relative;
+        margin: auto;
+        max-width: 500px;
+        padding: 50px;
+        border-top: 40px solid #e9a615;
+        border-bottom: 40px solid #e9a615;
+        background-color: #fff;
+        opacity: 0.98;
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+      /* Maquetación Inline-block Layout (display: inline, display: block, display:inline-block)*/
+      .reseña {
+        display: inline-block;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 20px;
+        background-color: rgb(255, 181, 112);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="banner">
+        <img class="Logo" src="Imagenes/Logo.jpg" alt="Logo del restaurante" />
+        <h2 class="titulo">Restaurante y Comida a Domicilio</h2>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Menu.html">Menú</a></li>
+        <li><a href="Categoria.html">Categorias</a></li>
+        <li><a href="Pedido.html">Pedidos</a></li>
+        <li><a href="Reseña.html">Reseñas</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <h1 style="text-align: center">Reseña de clientes:</h1>
+      <div class="reseñas">
+        <div class="reseña">
+          <div class="img-circle">
+            <img src="Imagenes/foto1.jpg" alt="Foto de perfil del usuario" />
+          </div>
+          <h3>Anna</h3>
+          <p>
+            "El ambiente del restaurante es muy acogedor y el personal es
+            extremadamente amable. Probé varios platos y todos estaban
+            exquisitos. ¡Altamente recomendado!"
+          </p>
+        </div>
+        <div class="reseña">
+          <div class="img-circle">
+            <img src="Imagenes/foto2.jpg" alt="Foto de perfil del usuario" />
+          </div>
+          <h3>David</h3>
+          <p>
+            "Me encanta pedir comida a domicilio en este restaurante. Siempre
+            son puntuales y la calidad de la comida es excepcional. Sin duda, mi
+            opción favorita."
+          </p>
+        </div>
+        <div class="reseña">
+          <div class="img-circle">
+            <img src="Imagenes/foto3.jpg" alt="Foto de perfil del usuario" />
+          </div>
+          <h3>Domenica</h3>
+          <p>
+            "Fui a cenar con mi familia y todos quedamos impresionados. La
+            presentación de los platos era impecable y el sabor era excepcional.
+            Definitivamente, uno de los mejores restaurantes en los que he
+            estado."
+          </p>
+        </div>
+
+        <div class="reseña">
+          <div class="img-circle">
+            <img src="Imagenes/foto4.jpg" alt="Foto de perfil del usuario" />
+          </div>
+          <h3>James</h3>
+          <p>
+            "La variedad en el menú es impresionante. Tienen opciones para todos
+            los gustos, desde platos tradicionales hasta opciones vegetarianas y
+            veganas. Además, el precio es bastante razonable. ¡Volveré a probar
+            más deliciosos platos!"
+          </p>
+        </div>
+
+        <div class="reseña">
+          <div class="img-circle">
+            <img src="Imagenes/foto5.jpg" alt="Foto de perfil del usuario" />
+          </div>
+          <h3>Shirley</h3>
+          <p>
+            "Mi experiencia en este restaurante fue simplemente maravillosa. El
+            chef es un genio culinario y cada bocado era una explosión de
+            sabores. Sin duda, este lugar se ha convertido en mi favorito. ¡No
+            puedo esperar para regresar!"
+          </p>
+        </div>
+      </div>
+      <button onclick="cargarReseñas()">Cargar mas reseñas</button>
+      <a href="ReseñaForm.html">Hacer Reseña</a>
+    </div>
+
+    <footer>
+      <h3>Dirección de contacto</h3>
+      <h3>Derechos reservados 2023 - Tarea 1 - Grupo #11</h3>
+    </footer>
+  </body>
+</html>
